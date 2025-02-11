@@ -1,0 +1,14 @@
+                              ** READ ME FIRST **
+** ouvrir le fichier "noe_prez.html" c'est la page principal de mon site. **
+** les fichiers "P1";"P2";"P3" correspondent au page de mes projets. **
+** le fichier "responsive.css" est le code qui permet d'adapter le site web au différent écran. **
+** le fichier "styles.css" est le code qui donne toute la beauté au site web. **
+** le fichier "CV.pdf" est mon CV qui est disponible au téléchargement sur mon site web. **
+** le P3 n'est pas encore fini. **
+** ceci n'est qu'une v.1.**
+** je souhaite encore rajouter du JS pour plus d'intéractivité . ** 
+** le mode sombre est fonctionel. **
+** le formulaire contact aussi. **
+** je regarde aussi pour rajouter un chatbot qui pourrait aider le visiteur sur le site. **
+                            ** Noé Marchal **
+
