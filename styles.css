@@ -136,7 +136,6 @@ footer p {
     margin: 0;
     font-size: 1em;
 }
-
 /* Bouton du mode sombre */
 #dark-mode-toggle {
     background-color: #757576;
@@ -154,7 +153,7 @@ footer p {
 }
 
 #dark-mode-toggle:hover {
-    background-color: #757576;
+    background-color: #5d5d5d;
     transform: scale(1.1);
 }
 
