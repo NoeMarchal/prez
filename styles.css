@@ -193,7 +193,7 @@ input.dark-mode {
 }
 
 #windForm button.dark-mode {
-    background-color: #357ABD;
+    background-color: #757576;
     color: #ffffff;
 }
 
@@ -365,7 +365,7 @@ img {
 
 #windForm button {
     padding: 10px 20px;
-    background-color: #4a90e2;
+    background-color: #757576;
     color: #fff;
     border: none;
     border-radius: 60px;
@@ -375,7 +375,7 @@ img {
 }
 
 #windForm button:hover {
-    background-color: #357ABD;
+    background-color: #5d5d5d;
     transform: scale(1.05);
 }
 
@@ -449,7 +449,7 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #757576;
     color: white;
     border-radius: 50%;
     width: 50px;
@@ -477,7 +477,7 @@ strong {
 
 /* Lorsque le bouton est survolé, agrandir et afficher le texte */
 .back-button:hover {
-    background-color: #333;
+    background-color: #5d5d5d;
     width: auto;
     /* Ajuster la taille */
     padding: 10px 20px;
@@ -577,7 +577,7 @@ a:hover {
 }
 
 button {
-    background-color: #3498db;
+    background-color: #757576;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -588,5 +588,5 @@ button {
 }
 
 button:hover {
-    background-color: #2874a6;
+    background-color: #5d5d5d;
 }
