@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV_Noé_Marchal.pdf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Consolas:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1e1e1e; /* Fond sombre Epitech style */
+            --sidebar-color: #252526;
+            --text-color: #d4d4d4;
+            --accent-color: #4a90e2; /* Bleu Tech */
+            --border-color: #3e3e42;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact; 
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Format A4 */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: grid;
+            grid-template-columns: 30% 70%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Colonne de Gauche (Sidebar) */
+        .sidebar {
+            background-color: var(--sidebar-color);
+            padding: 30px 20px;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* Titres Sidebar */
+        .sidebar h2 {
+            font-family: 'Consolas', monospace;
+            color: #fff;
+            font-size: 1.1em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar h2 i { color: var(--accent-color); font-size: 0.9em; }
+
+        /* Listes Sidebar */
+        .info-list, .skill-list {
+            list-style: none;
+            font-size: 0.9em;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ccc;
+        }
+
+        .info-list i { color: var(--accent-color); width: 15px; }
+
+        .skill-tag {
+            display: inline-block;
+            background: #333;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Colonne de Droite (Main) */
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        /* Header Nom */
+        .header-name {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .header-name h1 {
+            font-family: 'Consolas', monospace;
+            color: #fff;
+            font-size: 2.8em;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .header-name .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            font-weight: 600;
+            font-family: 'Consolas', monospace;
+        }
+
+        /* Sections Principales */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-family: 'Consolas', monospace;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            margin-top: 25px;
+        }
+
+        .section-title span { color: var(--accent-color); }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        .item-date {
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            color: var(--accent-color);
+            background: #252526;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .item-subtitle {
+            color: #aaa;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+
+        .item-desc {
+            font-size: 0.9em;
+            color: #ccc;
+            line-height: 1.4;
+        }
+
+        /* Impression */
+        @media print {
+            body { 
+                background: none; 
+                padding: 0; 
+                margin: 0;
+            }
+            .page {
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <aside class="sidebar">
+            <div class="profile-container">
+                <img src="images/moi.jpg" alt="Noé Marchal" class="profile-img">
+            </div>
+
+            <section>
+                <h2><i class="fas fa-terminal"></i> CONTACT</h2>
+                <ul class="info-list">
+                    <li><i class="fas fa-phone-alt"></i> 06.22.36.77.24</li>
+                    <li><i class="fas fa-envelope"></i> noemarchal59@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Lille, France</li>
+                    <li><i class="fas fa-birthday-cake"></i> 13 Mai 2006 (19 ans)</li>
+                    <li><i class="fas fa-car"></i> Permis B (Fév. 2024)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-code"></i> HARD SKILLS</h2>
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">Python / C</span>
+                <span class="skill-tag">Hardware / Arduino</span>
+                <span class="skill-tag">Linux / Unix</span>
+                <span class="skill-tag">Travail du bois</span>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-user-check"></i> SOFT SKILLS</h2>
+                <span class="skill-tag">Travail d'équipe</span>
+                <span class="skill-tag">Persévérance</span>
+                <span class="skill-tag">Leadership (Délégué)</span>
+                <span class="skill-tag">Empathie</span>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-language"></i> LANGUES</h2>
+                <ul class="info-list">
+                    <li>Anglais Technique (B2)</li>
+                    <li>Français (Natif)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-heart"></i> HOBBIES</h2>
+                <ul class="info-list">
+                    <li><i class="fas fa-basketball-ball"></i> Basket (9 ans)</li>
+                    <li><i class="fas fa-water"></i> Kite Surf / Sports d'eau</li>
+                    <li><i class="fas fa-running"></i> Athlétisme (2 ans)</li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="header-name">
+                <h1>Noé MARCHAL</h1>
+                <div class="subtitle">Étudiant @ Epitech | Passionné de Tech</div>
+            </header>
+
+            <section>
+                <div class="section-title"><span>./</span> EDUCATION</div>
+                
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Programme Grande École (1ère année)</span>
+                        <span class="item-date">Sept. 2025 - Présent</span>
+                    </div>
+                    <div class="item-subtitle">Epitech Technology, Lille</div>
+                    <div class="item-desc">Pédagogie par projet. Piscine C, Unix System Programming et développement logiciel intensif.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Terminale STI2D (Spé. SIN)</span>
+                        <span class="item-date">2024 - 2025</span>
+                    </div>
+                    <div class="item-subtitle">Lycée Privé Ozanam, Lille</div>
+                    <div class="item-desc">Systèmes d'Information et Numérique. Délégué de classe.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">1ère & 2nde STI2D (Option ESICIT)</span>
+                        <span class="item-date">2022 - 2024</span>
+                    </div>
+                    <div class="item-subtitle">Lycée Privé Ozanam, Lille</div>
+                    <div class="item-desc">Délégué de classe sur les deux années.</div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title"><span>./</span> EXPERIENCE_PRO</div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Serveur & Plongeur</span>
+                        <span class="item-date">Été 2024 & Avril 2025</span>
+                    </div>
+                    <div class="item-subtitle">Restaurant "Chez Max", Wissant</div>
+                    <div class="item-desc">Service en salle, gestion du stress en coup de feu, travail d'équipe et relation client.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Stage Informatique (IT)</span>
+                        <span class="item-date">Juin 2023</span>
+                    </div>
+                    <div class="item-subtitle">SCC France</div>
+                    <div class="item-desc">Immersion en entreprise de services numériques. Découverte de l'infrastructure, maintenance et support.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Crêpier & Gaufreur</span>
+                        <span class="item-date">Juillet 2024</span>
+                    </div>
+                    <div class="item-subtitle">Crêperie "Caline and GO", Wissant</div>
+                    <div class="item-desc">Préparation, vente directe et gestion de la caisse.</div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title"><span>./</span> ENGAGEMENT_SOCIAL</div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Bénévolat & Service</span>
+                        <span class="item-date">2022 - 2023</span>
+                    </div>
+                    <div class="item-subtitle">Pèlerinage à Lourdes (Train Bleu/Vert)</div>
+                    <div class="item-desc">Service auprès des personnes malades et accompagnement humain.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Stage Associatif</span>
+                        <span class="item-date">Janvier 2023</span>
+                    </div>
+                    <div class="item-subtitle">EHPAD de Bondues</div>
+                    <div class="item-desc">Animation et aide aux résidents. Développement de l'empathie.</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
