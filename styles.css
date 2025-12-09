@@ -722,121 +722,585 @@ body.dark-mode .bio-content {
     color: #fff;
 }
 
-/* --- Section Compétences Moderne --- */
+/* --- Styles "New Tech" Compétences --- */
 
-.skills-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1.1em;
-    color: #666;
+#skills h2 {
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
-/* Grille de cartes */
+.tech-accent {
+    color: #4a90e2; /* Bleu Tech */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive auto */
-    gap: 30px;
+    /* Création de colonnes auto-adaptables mais qui gardent la ligne */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    align-items: stretch; /* IMPORTANT : Force la même hauteur pour toutes les cartes */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Style de la carte */
+/* Design de la Carte */
 .skill-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px; /* Coins légèrement arrondis mais pas trop */
+    padding: 0; /* On gère le padding à l'intérieur */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Force la carte à prendre toute la hauteur dispo */
 }
 
+/* Effet "Glow" Tech au survol */
 .skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    border-color: #4a90e2;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.15); /* Ombre bleue douce */
 }
 
-/* Icône principale en haut de carte */
-.card-icon {
-    font-size: 2.5em;
-    color: #4a90e2; /* Ta couleur accent */
-    margin-bottom: 20px;
+/* Petite barre colorée en haut de chaque carte */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e1e4e8;
+    transition: background 0.3s;
 }
 
-.skill-card h3 {
-    margin-bottom: 25px;
-    font-size: 1.4em;
+.skill-card:hover::before {
+    background: #4a90e2; /* La barre devient bleue au survol */
+}
+
+/* En-tête de la carte */
+.card-header {
+    padding: 25px 25px 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header i {
+    font-size: 1.5em;
+    color: #333;
+    background: #f4f6f8;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left; /* Alignement gauche pour faire pro */
+}
+
+/* Corps de la carte */
+.skill-body {
+    padding: 25px;
+    flex-grow: 1; /* Remplit l'espace vide pour aligner le bas */
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-body p {
+    text-align: left;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 600;
 }
 
-/* Conteneur des badges (tags) */
+/* Les Tags (Badges style code) */
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
 }
 
-/* Design des Badges (Pillules) */
-.skill-tags span {
-    background-color: #f0f4f8;
+.tag {
+    background-color: #f8f9fa;
     color: #333;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.95em;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espace entre icone et texte */
+    border: 1px solid #e1e4e8;
+    padding: 6px 12px;
+    border-radius: 6px; /* Carré arrondi pour aspect tech */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* Police Code */
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.2s;
 }
 
-/* Effet au survol des badges */
-.skill-card:hover .skill-tags span {
-    background-color: #4a90e2;
-    color: #fff;
+.skill-card:hover .tag {
+    background-color: #fff;
+    border-color: #4a90e2;
+    color: #4a90e2;
 }
 
-/* Liste pour les Soft Skills */
-.skill-list ul {
+/* Liste Tech pour Soft Skills */
+.tech-list {
     list-style: none;
     padding: 0;
-    text-align: left;
-    margin-left: 20px;
+    margin: 0;
 }
 
-.skill-list li {
-    margin-bottom: 12px;
-    font-size: 1em;
-    color: #555;
+.tech-list li {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    font-family: 'Consolas', monospace;
+    font-size: 0.95em;
 }
 
-.skill-list li i {
-    color: #4a90e2;
-    margin-right: 10px;
+.tech-list li:last-child {
+    border-bottom: none;
+}
+
+.tech-list i {
+    color: #ccc;
     font-size: 0.8em;
 }
 
-/* --- Support Dark Mode --- */
-body.dark-mode .skills-intro { color: #ccc; }
+.skill-card:hover .tech-list i {
+    color: #28a745; /* Devient vert au survol de la carte */
+}
 
+/* --- Dark Mode Adaptation --- */
 body.dark-mode .skill-card {
-    background-color: #2a2a2a; /* Fond gris foncé */
-    border: 1px solid #444;
+    background: #1e1e1e;
+    border-color: #333;
 }
 
-body.dark-mode .skill-card h3 { color: #fff; }
-
-body.dark-mode .skill-tags span {
-    background-color: #333;
-    color: #ddd;
-}
-
-body.dark-mode .skill-card:hover .skill-tags span {
-    background-color: #4a90e2; /* Reste bleu au survol */
+body.dark-mode .card-header i {
+    background: #2d2d2d;
     color: #fff;
 }
 
-body.dark-mode .skill-list li { color: #ddd; }
+body.dark-mode .card-header {
+    border-bottom-color: #333;
+}
+
+body.dark-mode .tag {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #ddd;
+}
+
+body.dark-mode .skill-card:hover {
+    border-color: #4a90e2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .tech-list li {
+    border-bottom-color: #333;
+    color: #ddd;
+}
+
+/* --- Section Projets "Tech" --- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    align-items: stretch; /* Aligne la hauteur des cartes */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* La carte globale (c'est un lien <a>) */
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%; /* Force la hauteur */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Effet Hover global */
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #4a90e2;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.15);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* En-tête : Icône + Titre */
+.project-header {
+    padding: 25px 25px 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fafbfc;
+}
+
+.folder-icon {
+    font-size: 1.4em;
+    color: #4a90e2;
+    background: #eef6fc;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.project-title-group h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-family: 'Consolas', 'Monaco', monospace; /* Police code */
+    color: #24292e;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Badge de statut (En Prod, WIP...) */
+.status-badge {
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background-color: #defbe6; /* Vert clair par défaut */
+    color: #2da44e;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.status-badge.warning {
+    background-color: #fff8c5; /* Jaune pour WIP */
+    color: #b08800;
+}
+
+/* Corps du projet */
+.project-body {
+    padding: 25px;
+    flex-grow: 1; /* Remplit l'espace pour aligner le footer en bas */
+}
+
+.project-body p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #586069;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Pied de page : Tags + Flèche */
+.project-footer {
+    padding: 15px 25px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.tech-stack-mini {
+    display: flex;
+    gap: 8px;
+}
+
+.tech-stack-mini span {
+    font-size: 0.8em;
+    color: #6a737d;
+    background-color: #f1f8ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+}
+
+.link-arrow {
+    color: #4a90e2;
+    transition: transform 0.3s ease;
+}
+
+/* Animation de la flèche au survol */
+.project-card:hover .link-arrow {
+    transform: translateX(5px);
+}
+
+/* --- Dark Mode Adaptation --- */
+body.dark-mode .project-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #ddd;
+}
+
+body.dark-mode .project-header,
+body.dark-mode .project-footer {
+    background-color: #252525;
+    border-color: #333;
+}
+
+body.dark-mode .folder-icon {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .project-title-group h3 {
+    color: #fff;
+}
+
+body.dark-mode .project-body p {
+    color: #aaa;
+}
+
+body.dark-mode .tech-stack-mini span {
+    background-color: #333;
+    color: #ccc;
+}
+
+/* --- Section Réseaux Sociaux "Connect" --- */
+
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* La Carte Sociale */
+.social-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Enlever soulignement par défaut */
+.social-card:hover {
+    text-decoration: none;
+    transform: translateY(-5px);
+}
+
+/* Icône ronde à gauche */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f4f6f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+/* Info texte */
+.social-info {
+    flex-grow: 1;
+    text-align: left; /* Alignement gauche */
+}
+
+.social-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #333;
+}
+
+.social-info p {
+    margin: 4px 0 0 0;
+    font-size: 0.9em;
+    color: #888;
+    text-align: left; /* Force l'alignement gauche du sous-titre */
+}
+
+/* Petite flèche/icône à droite */
+.social-arrow {
+    color: #ccc;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+/* --- Couleurs Spécifiques au Survol --- */
+
+/* LinkedIn Hover */
+.social-card.linkedin:hover {
+    border-color: #0077b5;
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.2);
+}
+.social-card.linkedin:hover .social-icon {
+    background-color: #0077b5;
+    color: #fff;
+}
+.social-card.linkedin:hover .social-arrow { color: #0077b5; }
+
+/* GitHub Hover */
+.social-card.github:hover {
+    border-color: #333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.social-card.github:hover .social-icon {
+    background-color: #333;
+    color: #fff;
+}
+.social-card.github:hover .social-arrow { color: #333; }
+
+/* Instagram Hover */
+.social-card.instagram:hover {
+    border-color: #e1306c;
+    box-shadow: 0 8px 25px rgba(225, 48, 108, 0.2);
+}
+.social-card.instagram:hover .social-icon {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: #fff;
+}
+.social-card.instagram:hover .social-arrow { color: #e1306c; }
+
+/* --- Dark Mode Adaptation --- */
+body.dark-mode .social-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+body.dark-mode .social-info h3 { color: #fff; }
+body.dark-mode .social-info p { color: #aaa; }
+body.dark-mode .social-icon {
+    background-color: #2d2d2d;
+    color: #ddd;
+}
+/* --- Bouton CV "Tech Style" --- */
+
+.cv-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+/* Le conteneur du bouton (Lien) */
+.tech-button {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 50px; /* Forme de pilule très moderne */
+    padding: 10px 10px 10px 25px; /* Padding asymétrique pour laisser place au rond à gauche */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Enlever soulignement lien */
+.tech-button:hover {
+    text-decoration: none;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.25); /* Belle ombre bleue */
+    border-color: #4a90e2;
+}
+
+/* Boite de l'icône PDF (carré arrondi) */
+.btn-icon-box {
+    font-size: 1.8em;
+    color: #e74c3c; /* Rouge PDF */
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Texte central */
+.btn-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.btn-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-subtitle {
+    font-size: 0.85em;
+    color: #888;
+    font-family: 'Consolas', monospace; /* Touche Tech */
+    margin-top: 2px;
+}
+
+.dot {
+    color: #ccc;
+    font-weight: bold;
+}
+
+/* Cercle d'action à droite (Flèche) */
+.btn-action {
+    width: 45px;
+    height: 45px;
+    background-color: #f4f6f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+/* Animation au survol */
+.tech-button:hover .btn-action {
+    background-color: #4a90e2;
+    color: #fff;
+    transform: rotate(360deg); /* Petite rotation fun */
+}
+
+/* --- Dark Mode Adaptation --- */
+body.dark-mode .tech-button {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .btn-title {
+    color: #fff;
+}
+
+body.dark-mode .btn-subtitle {
+    color: #aaa;
+}
+
+body.dark-mode .btn-action {
+    background-color: #2d2d2d;
+    color: #ddd;
+}
+
+body.dark-mode .tech-button:hover .btn-action {
+    background-color: #4a90e2;
+    color: #fff;
+}
