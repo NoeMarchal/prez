@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Épicuvin App - Noé Marchal</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="responsive.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" href="images/NOE.png" />
+  </head>
+
+  <body>
+    <header class="tech-header">
+        <div class="header-inner">
+            <div class="logo-area">
+                <span class="prompt-sign">~/</span>
+                <span class="logo-text">Noé_Marchal</span>
+                <span class="blinking-cursor">|</span>
+            </div>
+
+            <nav class="tech-nav">
+                <a href="index.html#about"><span class="nav-num">01.</span> <span class="nav-txt">À propos</span></a>
+                <a href="index.html#skills"><span class="nav-num">02.</span> <span class="nav-txt">Stack</span></a>
+                <a href="index.html#projects"><span class="nav-num">03.</span> <span class="nav-txt">Projets</span></a>
+                <a href="index.html#socials"><span class="nav-num">04.</span> <span class="nav-txt">Réseaux</span></a>
+            </nav>
+
+            <button id="dark-mode-toggle" class="system-switch">
+                <div class="switch-content">
+                    <span class="cmd-text">_theme:</span>
+                    <span id="theme-status" class="status-text">LIGHT</span>
+                </div>
+                <div class="switch-icon">
+                    <i id="theme-icon" class="fas fa-sun"></i>
+                </div>
+            </button>
+            
+            <button id="menu-toggle" class="burger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-nav-overlay">
+            <a href="index.html#about" class="mobile-link">01. À propos</a>
+            <a href="index.html#skills" class="mobile-link">02. Stack</a>
+            <a href="index.html#projects" class="mobile-link">03. Projets</a>
+            <a href="index.html#socials" class="mobile-link">04. Réseaux</a>
+            <a href="index.html#contact" class="mobile-link">05. Contact</a>
+        </div>
+    </header>
+
+    <main>
+      <section class="project-detail-section">
+        <div class="container">
+          <div class="project-page-header">
+            <h2><span class="tech-accent">./</span> epicuvin_app <span class="status-badge" style="background-color: #800020; color: #fff;">v2.1 Stable</span></h2>
+            <p class="skills-intro">Gestionnaire de cave à vin intelligent avec base de données cloud.</p>
+          </div>
+
+          <div class="skills-grid"> 
+            
+            <div class="about-card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <i class="fas fa-wine-glass-alt"></i>
+                    <h3>project_brief.md</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="tech-tag">Target:</span> Oenophiles & Collectionneurs.<br>
+                        Une application web complète (SPA) permettant de gérer l'inventaire d'une cave à vin en temps réel. L'interface propose un système d'authentification sécurisé et une synchronisation directe avec une base de données Google Sheets via API.
+                    </p>
+                </div>
+            </div>
+
+            <div class="skill-card infra">
+                <div class="card-header">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>FullStack_Architecture</h3>
+                </div>
+                <div class="skill-body">
+                    <p>Frontend</p>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5 / CSS3</span>
+                        <span class="tag">JavaScript (Async/Await)</span>
+                        <span class="tag">Glassmorphism UI</span>
+                    </div>
+                    <p style="margin-top: 20px;">Backend & Data</p>
+                    <div class="skill-tags">
+                        <span class="tag">Google Apps Script</span>
+                        <span class="tag">Google Sheets (DB)</span>
+                        <span class="tag">REST API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card dev">
+                <div class="card-header">
+                    <i class="fas fa-cogs"></i>
+                    <h3>System_Capabilities</h3>
+                </div>
+                <div class="skill-body">
+                    <p>Modules actifs</p>
+                    <ul class="tech-list">
+                        <li><span>Auth Multi-Utilisateurs</span> <i class="fas fa-user-lock" style="color:#28a745;"></i></li>
+                        <li><span>CRUD (Ajout/Edit/Suppr)</span> <i class="fas fa-database" style="color:#28a745;"></i></li>
+                        <li><span>Tri & Filtrage Dynamique</span> <i class="fas fa-filter" style="color:#28a745;"></i></li>
+                        <li><span>Responsive Mobile First</span> <i class="fas fa-mobile-alt" style="color:#28a745;"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="cv-section">
+            <a href="index.html#projects" class="tech-button">
+                <div class="btn-icon-box" style="color: #666;">
+                    <i class="fas fa-level-up-alt"></i>
+                </div>
+                <div class="btn-content">
+                    <span class="btn-title">cd ..</span>
+                    <span class="btn-subtitle">Retour au répertoire racine</span>
+                </div>
+                <div class="btn-action">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="tech-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <h3>Noé Marchal<span class="blink">_</span></h3>
+                <p class="footer-tagline">Étudiant Epitech & Passionné de Hardware.</p>
+                <div class="footer-location"><i class="fas fa-map-marker-alt"></i> Lille, France</div>
+            </div>
+            <div class="footer-col links-col">
+                <h4><span class="hash">#</span> Navigation</h4>
+                <ul>
+                    <li><a href="index.html#about">À propos</a></li>
+                    <li><a href="index.html#skills">Compétences</a></li>
+                    <li><a href="index.html#projects">Projets</a></li>
+                </ul>
+            </div>
+            <div class="footer-col status-col">
+                <h4><span class="hash">#</span> Status</h4>
+                <div class="system-status">
+                    <div class="status-item">
+                        <span class="dot online"></span>
+                        <span>System Operational</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Noé Marchal.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.contains('fa-bars') ? icon.classList.replace('fa-bars', 'fa-times') : icon.classList.replace('fa-times', 'fa-bars');
+        });
+
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        const themeStatus = document.getElementById('theme-status');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            updateSwitchUI(true);
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateSwitchUI(isDark);
+        });
+
+        function updateSwitchUI(isDark) {
+            if (isDark) {
+                themeStatus.textContent = 'DARK';
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                themeStatus.textContent = 'LIGHT';
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+    </script>
+  </body>
+</html>
