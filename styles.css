@@ -590,3 +590,253 @@ button {
 button:hover {
     background-color: #5d5d5d;
 }
+/* --- Styles Timeline & Bio --- */
+
+.bio-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.bio-content em {
+    font-weight: bold;
+    color: #4a90e2; /* Bleu Epitech/Tech */
+    font-style: italic;
+    display: block;
+    margin-top: 10px;
+}
+
+.timeline-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* Container de la timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* La ligne verticale centrale */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #4a90e2;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+/* Les boites (items) */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Placer à gauche */
+.left { left: 0; }
+
+/* Placer à droite */
+.right { left: 50%; }
+
+/* Les cercles sur la ligne */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: white;
+    border: 4px solid #FF9F55; /* Orange pour contraster */
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Ajustement cercle pour la droite */
+.right::after { left: -10px; }
+
+/* Le contenu de la boite (carte) */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+}
+
+.content h3 {
+    margin-top: 0;
+    color: #4a90e2;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.content h4 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* --- Responsive Mobile --- */
+@media screen and (max-width: 768px) {
+    .timeline::after { left: 31px; }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .left, .right { left: 0; }
+    
+    .timeline-item::after { left: 21px; }
+    .right::after { left: 21px; }
+}
+
+/* --- Dark Mode Support --- */
+body.dark-mode .content {
+    background-color: #333;
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #555;
+}
+body.dark-mode .timeline-title,
+body.dark-mode .bio-content {
+    color: #fff;
+}
+
+/* --- Section Compétences Moderne --- */
+
+.skills-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Grille de cartes */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive auto */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style de la carte */
+.skill-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Icône principale en haut de carte */
+.card-icon {
+    font-size: 2.5em;
+    color: #4a90e2; /* Ta couleur accent */
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+/* Conteneur des badges (tags) */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Design des Badges (Pillules) */
+.skill-tags span {
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espace entre icone et texte */
+}
+
+/* Effet au survol des badges */
+.skill-card:hover .skill-tags span {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+/* Liste pour les Soft Skills */
+.skill-list ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.skill-list li {
+    margin-bottom: 12px;
+    font-size: 1em;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.skill-list li i {
+    color: #4a90e2;
+    margin-right: 10px;
+    font-size: 0.8em;
+}
+
+/* --- Support Dark Mode --- */
+body.dark-mode .skills-intro { color: #ccc; }
+
+body.dark-mode .skill-card {
+    background-color: #2a2a2a; /* Fond gris foncé */
+    border: 1px solid #444;
+}
+
+body.dark-mode .skill-card h3 { color: #fff; }
+
+body.dark-mode .skill-tags span {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark-mode .skill-card:hover .skill-tags span {
+    background-color: #4a90e2; /* Reste bleu au survol */
+    color: #fff;
+}
+
+body.dark-mode .skill-list li { color: #ddd; }

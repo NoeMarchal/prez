@@ -52,45 +52,118 @@
     <!-- Contenu principal -->
     <main>
         <!-- Section "À propos de moi" -->
-        <section id="about">
-            <h2>À propos de moi</h2>
+<section id="about">
+    <div class="container">
+        <h2>À propos de moi</h2>
+        
+        <div class="bio-content">
             <p>
-                Je suis passionné par les sports nautiques et l'informatique.</br>
-                Une de mes citations favorites est "On n'a rien sans rien.".
+                Bonjour ! Je suis <strong>Noé Marchal</strong>, étudiant en informatique à <strong>Epitech</strong> (Programme Grande École).
             </p>
-        </section>
+            <p>
+                Passionné par la tech, je suis passé de la découverte au lycée (STI2D) à la pratique intensive. Je touche à tout : du <strong>développement logiciel</strong> (C, Python) à l'électronique, en passant par le <strong>travail du bois</strong>.
+            </p>
+            <p>
+                Sportif (Kite surf, Basket) et engagé, j'aime relever des défis techniques tout en gardant des valeurs humaines fortes. Ma devise : <br>
+                <em>"On n'a rien sans rien."</em>
+            </p>
+        </div>
+
+        <h3 class="timeline-title">Mon Parcours</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>Sept. 2025 - Présent</h3>
+                    <h4>Epitech - Programme Grande École</h4>
+                    <p>Début de mon cursus en 5 ans. Apprentissage intensif par la pratique ("Piscine", Projets C), travail en groupe et autonomie technique.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>2024 - 2025</h3>
+                    <h4>Terminale STI2D & Jobs d'été</h4>
+                    <p>Bac STI2D spécialité SIN (Systèmes d'Information et Numérique) au Lycée Ozanam. <br>
+                    Expériences pro : Serveur "Chez Max" & Crêpier.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>2023</h3>
+                    <h4>Immersion Tech & Animation</h4>
+                    <p>Stage informatique chez <strong>SCC France</strong> : découverte de l'infrastructure IT en entreprise. <br>
+                    Obtention du <strong>BAFA</strong> (Animation).</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>2022 - 2023</h3>
+                    <h4>Engagement Associatif</h4>
+                    <p>Deux pèlerinages à <strong>Lourdes</strong> (service des malades) et stage en <strong>EHPAD</strong>. Délégué de classe, j'aime m'investir pour les autres.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>Depuis toujours</h3>
+                    <h4>Sport & Passions</h4>
+                    <p>9 ans de Basket en club et pratique régulière du Kite Surf. Le sport m'a appris la persévérance et l'esprit d'équipe.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
         <!-- Section des compétences -->
-        <section id="skills">
-            <h2>Compétences</h2>
-            <p>Voici quelques compétences que je maîtrise :</p>
-            <ul>
-                <li>HTML, CSS, JS, ARDUINO, PYTHON
-                    <!-- Barre de progression -->
-                    <div class="progress-bar">
-                        <div class="progress html"></div>
-                        <span class="progress-percentage">75%</span>
-                    </div>
-                </li>
-                <li>Perséverance
-                    <div class="progress-bar">
-                        <div class="progress css"></div>
-                        <span class="progress-percentage">80%</span>
-                    </div>
-                </li>
-                <li>Anglais
-                    <div class="progress-bar">
-                        <div class="progress javascript"></div>
-                        <span class="progress-percentage">60%</span>
-                    </div>
-                </li>
-                <li>Joie de vivre
-                    <div class="progress-bar">
-                        <div class="progress other-skill"></div>
-                        <span class="progress-percentage">90%</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
+<section id="skills">
+    <div class="container">
+        <h2>Mes Compétences</h2>
+        <p class="skills-intro">Une palette technique polyvalente, orientée vers le hardware et le code.</p>
+        
+        <div class="skills-grid">
+            
+            <div class="skill-card">
+                <div class="card-icon"><i class="fas fa-code"></i></div>
+                <h3>Développement</h3>
+                <div class="skill-tags">
+                    <span><i class="fab fa-html5"></i> HTML5</span>
+                    <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span><i class="fab fa-js"></i> JavaScript</span>
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span>C / C++</span> </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Hardware & Système</h3>
+                <div class="skill-tags">
+                    <span><i class="fas fa-server"></i> Raspberry Pi</span>
+                    <span><i class="fab fa-linux"></i> Linux</span>
+                    <span>Arduino</span>
+                    <span>Réseaux & Cloud</span>
+                    <span>NFC / IoT</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <h3>Savoir-être</h3>
+                <div class="skill-list">
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Anglais :</strong> Niveau technique</li>
+                        <li><i class="fas fa-check"></i> <strong>Travail d'équipe :</strong> Expérience associative</li>
+                        <li><i class="fas fa-check"></i> <strong>Persévérance :</strong> Projets autodidactes</li>
+                        <li><i class="fas fa-check"></i> <strong>Permis B</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <!-- Section des projets -->
         <section id="projects">
