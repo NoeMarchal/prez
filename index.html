@@ -23,119 +23,135 @@
 
   <body>
     <!-- Section du header contenant le titre et la navigation -->
-    <header>
-      <h1>Noé Marchal</h1>
-      <nav>
-        <!-- Image cliquable redirigeant vers un lien externe -->
-        <a href="https://ibb.co/P1Y2tff">
-          <img
-            src="https://i.ibb.co/mhBnSMM/IMG-5170.jpg"
-            alt="IMG-5170"
-            width="60"
-          />
-        </a>
-        <!-- Liens de navigation vers les différentes sections -->
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projects">Projets</a>
-        <a href="#socials">Réseaux sociaux</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<header class="tech-header">
+    <div class="header-inner">
+        
+        <div class="logo-area">
+            <span class="prompt-sign">~/</span>
+            <span class="logo-text">Noé_Marchal</span>
+            <span class="blinking-cursor">|</span>
+        </div>
 
-    <!-- Bouton pour basculer en mode sombre -->
-    <button id="dark-mode-toggle">🌓</button>
+        <nav class="tech-nav">
+            <a href="#about"><span class="nav-num">01.</span> <span class="nav-txt">À propos</span></a>
+            <a href="#skills"><span class="nav-num">02.</span> <span class="nav-txt">Stack</span></a>
+            <a href="#projects"><span class="nav-num">03.</span> <span class="nav-txt">Projets</span></a>
+            <a href="#socials"><span class="nav-num">04.</span> <span class="nav-txt">Réseaux</span></a>
+        </nav>
+
+   <button id="dark-mode-toggle" class="system-switch">
+    <div class="switch-content">
+        <span class="cmd-text">_theme:</span>
+        <span id="theme-status" class="status-text">LIGHT</span>
+    </div>
+    <div class="switch-icon">
+        <i id="theme-icon" class="fas fa-sun"></i>
+    </div>
+</button>
+        </div>
+
+    </div>
+    
+    <div id="mobile-menu" class="mobile-nav-overlay">
+        <a href="#about" class="mobile-link">01. À propos</a>
+        <a href="#skills" class="mobile-link">02. Stack</a>
+        <a href="#projects" class="mobile-link">03. Projets</a>
+        <a href="#socials" class="mobile-link">04. Réseaux</a>
+        <a href="#contact" class="mobile-link">05. Contact</a>
+    </div>
+</header>
 
     <!-- Contenu principal -->
     <main>
       <!-- Section "À propos de moi" -->
-      <section id="about">
-        <div class="container">
-          <h2>À propos de moi</h2>
-
-          <div class="bio-content">
-            <p>
-              Bonjour ! Je suis <strong>Noé Marchal</strong>, étudiant en
-              informatique à <strong>Epitech</strong> (Programme Grande École).
-            </p>
-            <p>
-              Passionné par la tech, je suis passé de la découverte au lycée
-              (STI2D) à la pratique intensive. Je touche à tout : du
-              <strong>développement logiciel</strong> (C, Python) à
-              l'électronique, en passant par le
-              <strong>travail du bois</strong>.
-            </p>
-            <p>
-              Sportif (Kite surf, Basket) et engagé, j'aime relever des défis
-              techniques tout en gardant des valeurs humaines fortes. Ma devise
-              : <br />
-              <em>"On n'a rien sans rien."</em>
-            </p>
-          </div>
-
-          <h3 class="timeline-title">Mon Parcours</h3>
-          <div class="timeline">
-            <div class="timeline-item left">
-              <div class="content">
-                <h3>Sept. 2025 - Présent</h3>
-                <h4>Epitech - Programme Grande École</h4>
+<section id="about">
+    <div class="container">
+        <h2><span class="tech-accent">./</span> Whoami <span class="tech-accent">_</span></h2>
+        <p class="skills-intro">Profil utilisateur et historique de versions.</p>
+        
+        <div class="about-card bio-card">
+            <div class="card-header">
+                <i class="fas fa-info-circle"></i>
+                <h3>README.md</h3> </div>
+            <div class="card-body">
                 <p>
-                  Début de mon cursus en 5 ans. Apprentissage intensif par la
-                  pratique ("Piscine", Projets C), travail en groupe et
-                  autonomie technique.
+                    <span class="tech-tag">User:</span> <strong>Noé Marchal</strong><br>
+                    <span class="tech-tag">Role:</span> Étudiant <strong>Epitech</strong> (Programme Grande École)<br>
+                    <span class="tech-tag">Mission:</span> Transformer la curiosité en code et le bois en projets.
                 </p>
-              </div>
-            </div>
-
-            <div class="timeline-item right">
-              <div class="content">
-                <h3>2024 - 2025</h3>
-                <h4>Terminale STI2D & Jobs d'été</h4>
-                <p>
-                  Bac STI2D spécialité SIN (Systèmes d'Information et Numérique)
-                  au Lycée Ozanam. <br />
-                  Expériences pro : Serveur "Chez Max" & Crêpier.
+                <p class="bio-text">
+                    Passionné par le <strong>Hardware</strong> et le développement, je suis un profil "Maker". Sportif (Kite surf, Basket) et engagé, je crois en l'effort et l'esprit d'équipe.
                 </p>
-              </div>
+                <div class="quote-box">
+                    <i class="fas fa-quote-left"></i> On n'a rien sans rien.
+                </div>
             </div>
-
-            <div class="timeline-item left">
-              <div class="content">
-                <h3>2023</h3>
-                <h4>Immersion Tech & Animation</h4>
-                <p>
-                  Stage informatique chez <strong>SCC France</strong> :
-                  découverte de l'infrastructure IT en entreprise. <br />
-                  Obtention du <strong>BAFA</strong> (Animation).
-                </p>
-              </div>
-            </div>
-
-            <div class="timeline-item right">
-              <div class="content">
-                <h3>2022 - 2023</h3>
-                <h4>Engagement Associatif</h4>
-                <p>
-                  Deux pèlerinages à <strong>Lourdes</strong> (service des
-                  malades) et stage en <strong>EHPAD</strong>. Délégué de
-                  classe, j'aime m'investir pour les autres.
-                </p>
-              </div>
-            </div>
-
-            <div class="timeline-item left">
-              <div class="content">
-                <h3>Depuis toujours</h3>
-                <h4>Sport & Passions</h4>
-                <p>
-                  9 ans de Basket en club et pratique régulière du Kite Surf. Le
-                  sport m'a appris la persévérance et l'esprit d'équipe.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+
+        <h3 class="timeline-header"><span class="tech-accent">>></span> System_Logs (Parcours)</h3>
+        
+        <div class="tech-timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                <div class="about-card timeline-card">
+                    <div class="card-header">
+                        <span class="date-badge">Sept. 2025 - Présent</span>
+                        <h3>Epitech Technology</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="role-title">Programme Grande École</p>
+                        <p>Apprentissage intensif par la pratique ("Piscine", Projets C). Développement de l'autonomie technique et du travail de groupe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge"><i class="fas fa-school"></i></div>
+                <div class="about-card timeline-card">
+                    <div class="card-header">
+                        <span class="date-badge">2024 - 2025</span>
+                        <h3>Lycée Ozanam</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="role-title">Bac STI2D (SIN)</p>
+                        <p>Spécialité Systèmes d'Information et Numérique. Bases solides en logique informatique et électronique.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
+                <div class="about-card timeline-card">
+                    <div class="card-header">
+                        <span class="date-badge">Juin 2023</span>
+                        <h3>SCC France</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="role-title">Stage Informatique</p>
+                        <p>Immersion en entreprise IT. Découverte de l'infrastructure réseau et du support utilisateur.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge"><i class="fas fa-hands-helping"></i></div>
+                <div class="about-card timeline-card">
+                    <div class="card-header">
+                        <span class="date-badge">2022 - 2023</span>
+                        <h3>Bénévolat & Soft Skills</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="role-title">Engagement Associatif</p>
+                        <p>Pèlerinages à Lourdes (Service), Stage en EHPAD, Délégué de classe. Développement de l'empathie et du leadership.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
       <!-- Section des compétences -->
       <section id="skills">
         <div class="container">
@@ -385,10 +401,45 @@
 </div>
     </main>
 
-    <!-- Pied de page -->
-    <footer>
-      <p>&copy; 2025 MoUst4ki. Tous droits réservés.</p>
-    </footer>
+<footer class="tech-footer">
+    <div class="footer-content">
+        
+        <div class="footer-col brand-col">
+            <h3>Noé Marchal<span class="blink">_</span></h3>
+            <p class="footer-tagline">Étudiant Epitech & Passionné de Hardware.</p>
+            <div class="footer-location">
+                <i class="fas fa-map-marker-alt"></i> Lille, France
+            </div>
+        </div>
+
+        <div class="footer-col links-col">
+            <h4><span class="hash">#</span> Navigation</h4>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col status-col">
+            <h4><span class="hash">#</span> Status</h4>
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="dot online"></span>
+                    <span>Open to Work (Stage)</span>
+                </div>
+                <div class="status-item">
+                    <span class="dot busy"></span>
+                    <span>Coding @ Epitech</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Noé Marchal.</p>
+    </div>
+</footer>
 
     <!-- Scripts -->
     <script>
@@ -418,26 +469,40 @@
     </script>
 
     <script>
-      // Basculer entre les modes clair et sombre
-      const toggleButton = document.getElementById("dark-mode-toggle");
-      toggleButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        document.querySelector("header").classList.toggle("dark-mode");
-        document.querySelector("footer").classList.toggle("dark-mode");
-        document
-          .querySelectorAll(
-            "nav a, section, h1, h2, p, ul li, #windForm input, #windForm button, .socials a, strong, input"
-          )
-          .forEach((el) => {
-            el.classList.toggle("dark-mode");
-          });
+    // Gestionnaire de Mode Sombre "System Switch"
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    const themeStatus = document.getElementById('theme-status');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
 
-        // Changer le texte du bouton
-        toggleButton.textContent = document.body.classList.contains("dark-mode")
-          ? "🌓 "
-          : "🌓";
-      });
-    </script>
+    // Vérifier si le dark mode est déjà actif (ex: préférence système ou précédent chargement)
+    if (body.classList.contains('dark-mode')) {
+        updateSwitchUI(true);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        // Applique le dark mode aux autres éléments si nécessaire (header, footer, etc.)
+        document.querySelector('header').classList.toggle('dark-mode');
+        document.querySelector('footer').classList.toggle('dark-mode');
+        
+        // Mettre à jour l'interface du bouton
+        const isDark = body.classList.contains('dark-mode');
+        updateSwitchUI(isDark);
+    });
+
+    function updateSwitchUI(isDark) {
+        if (isDark) {
+            themeStatus.textContent = 'DARK';
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        } else {
+            themeStatus.textContent = 'LIGHT';
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    }
+</script>
 
     <script>
       // Ajout d'une animation de défilement douce pour les ancres
