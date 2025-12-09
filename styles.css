@@ -63,7 +63,7 @@ nav a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 200px 20px;
+    padding: 100px 20px 60px 20px; /* Réduit le 200px à 100px ou 120px */
     width: 100%;
     gap: 60px;
 }
@@ -1760,3 +1760,215 @@ body.dark-mode #mobile-menu {
     border-bottom-color: #333;
 }
 
+
+/* --- Hero Section --- */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px 60px 20px;
+    background-color: transparent; /* Fond blanc par défaut */
+    box-shadow: none; /* Pas d'ombre sur le hero */
+}
+
+.profile-frame {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px auto;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #e1e4e8;
+    padding: 3px;
+    object-fit: cover;
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: #28a745;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-highlight {
+    color: #4a90e2; /* Bleu Tech */
+}
+
+.hero-subtitle {
+    font-family: 'Consolas', monospace;
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+/* Bouton Hero */
+.tech-button.primary {
+    display: inline-flex; /* Pour centrer le contenu */
+    justify-content: center;
+    width: auto; /* Largeur auto */
+    padding: 12px 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    gap: 10px;
+}
+
+.tech-button.primary:hover {
+    background-color: #4a90e2;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+/* --- Contact Form "Terminal" --- */
+.contact-terminal {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.tech-form {
+    padding: 30px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Consolas', monospace;
+    color: #4a90e2;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.tech-form input, 
+.tech-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    background-color: #fafbfc;
+    font-family: 'Consolas', monospace; /* Police code pour écrire */
+    font-size: 0.95em;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.tech-form input:focus, 
+.tech-form textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.tech-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Vert "Exécuter" */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tech-submit-btn:hover {
+    background-color: #218838;
+}
+
+/* --- Dark Mode Adaptation --- */
+body.dark-mode .hero-section h1 { color: #fff; }
+body.dark-mode .hero-subtitle { color: #aaa; }
+body.dark-mode .profile-img { border-color: #333; }
+body.dark-mode .status-indicator { border-color: #121212; }
+
+body.dark-mode .contact-terminal {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+body.dark-mode .tech-form input,
+body.dark-mode .tech-form textarea {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
+
+/* --- Ajustement pour les photos de profil dans les réseaux --- */
+
+/* On s'assure que le conteneur rond cache ce qui dépasse */
+.social-icon {
+    overflow: hidden; /* Important pour que l'image reste ronde */
+    padding: 0; /* On enlève le padding pour que l'image touche les bords */
+    border: 2px solid transparent; /* Optionnel : prépare une bordure */
+}
+
+/* Style de l'image à l'intérieur du cercle */
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit le cercle sans être écrasée */
+    display: block;
+}
+
+/* --- Effet au survol (Optionnel mais stylé) --- */
+.social-card:hover .social-icon img {
+    transform: scale(1.1); /* L'image zoome légèrement */
+    transition: transform 0.3s ease;
+}
+
+/* --- Styles Spécifiques Page Projet --- */
+
+.project-page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.project-page-header h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+}
+
+.project-page-header .tech-accent {
+    font-family: 'Consolas', monospace;
+    color: #4a90e2;
+}
+
+/* Ajustement responsive pour la carte "full width" */
+@media (max-width: 768px) {
+    .about-card[style*="grid-column: 1 / -1"] {
+        grid-column: auto !important; /* Sur mobile, elle redevient normale */
+    }
+}
+
+/* Dark mode pour le header projet */
+body.dark-mode .project-page-header h2 {
+    color: #fff;
+}
