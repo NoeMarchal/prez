@@ -6,12 +6,12 @@
     <title>CV_Noé_Marchal.pdf</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Consolas:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
+<style>
         :root {
-            --bg-color: #1e1e1e; /* Fond sombre Epitech style */
+            --bg-color: #1e1e1e;
             --sidebar-color: #252526;
             --text-color: #d4d4d4;
-            --accent-color: #4a90e2; /* Bleu Tech */
+            --accent-color: #4a90e2;
             --border-color: #3e3e42;
         }
 
@@ -31,27 +31,26 @@
             padding: 20px;
         }
 
-        /* Format A4 */
         .page {
             width: 210mm;
             height: 297mm;
             background-color: var(--bg-color);
             color: var(--text-color);
             display: grid;
-            grid-template-columns: 30% 70%;
+            grid-template-columns: 30% 70%; /* Colonne gauche un peu plus large si besoin, sinon 28% 72% */
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            position: relative;
             overflow: hidden;
         }
 
-        /* Colonne de Gauche (Sidebar) */
+        /* --- SIDEBAR (GAUCHE) --- */
         .sidebar {
             background-color: var(--sidebar-color);
             padding: 30px 20px;
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            justify-content: flex-start;
+            gap: 20px; /* Espace équilibré entre les blocs */
         }
 
         .profile-container {
@@ -60,22 +59,21 @@
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             border: 3px solid var(--accent-color);
             object-fit: cover;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        /* Titres Sidebar */
         .sidebar h2 {
             font-family: 'Consolas', monospace;
             color: #fff;
-            font-size: 1.1em;
+            font-size: 1.05em;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -83,20 +81,8 @@
 
         .sidebar h2 i { color: var(--accent-color); font-size: 0.9em; }
 
-        /* Listes Sidebar */
-        .info-list, .skill-list {
-            list-style: none;
-            font-size: 0.9em;
-        }
-
-        .info-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ccc;
-        }
-
+        .info-list, .skill-list { list-style: none; font-size: 0.9em; }
+        .info-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: #ccc; }
         .info-list i { color: var(--accent-color); width: 15px; }
 
         .skill-tag {
@@ -110,52 +96,51 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Colonne de Droite (Main) */
+        /* --- CONTENU PRINCIPAL (DROITE) --- */
         .main-content {
-            padding: 40px 30px;
+            padding: 20px 10px; /* Beaucoup plus d'air sur les côtés et en haut */
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Header Nom */
         .header-name {
-            margin-bottom: 30px;
+            margin-bottom: 5px; /* Espace sous le nom remis à la normale */
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
         .header-name h1 {
             font-family: 'Consolas', monospace;
             color: #fff;
-            font-size: 2.8em;
+            font-size: 2.6em; /* Nom plus grand */
             line-height: 1;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .header-name .subtitle {
             color: var(--accent-color);
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 600;
             font-family: 'Consolas', monospace;
         }
 
-        /* Sections Principales */
         .section-title {
             display: flex;
             align-items: center;
             gap: 10px;
             color: #fff;
             font-family: 'Consolas', monospace;
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            margin-top: 25px;
+            font-size: 1.3em;
+            margin-bottom: 18px; /* Plus d'espace sous les titres */
+            margin-top: 25px;    /* Plus d'espace au dessus des titres */
         }
 
         .section-title span { color: var(--accent-color); }
 
-        /* Timeline Items */
         .timeline-item {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 18px; /* On ré-écarte les expériences */
             border-left: 2px solid var(--border-color);
         }
 
@@ -163,7 +148,7 @@
             content: '';
             position: absolute;
             left: -6px;
-            top: 5px;
+            top: 6px;
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -176,17 +161,18 @@
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 4px;
+            font-size: 1em;
         }
 
         .item-title {
             color: #fff;
-            font-weight: 700;
-            font-size: 1.05em;
+            font-weight: 500;
+            font-size: 0.9em;
         }
 
         .item-date {
             font-family: 'Consolas', monospace;
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: var(--accent-color);
             background: #252526;
             padding: 2px 6px;
@@ -196,28 +182,20 @@
         .item-subtitle {
             color: #aaa;
             font-style: italic;
-            font-size: 0.95em;
-            margin-bottom: 5px;
+            font-size: 0.8em;
+            margin-bottom: 4px;
         }
 
         .item-desc {
             font-size: 0.9em;
             color: #ccc;
-            line-height: 1.4;
+            line-height: 1.45; /* Texte plus aéré pour la lecture */
         }
 
-        /* Impression */
+        /* Si jamais ça dépasse d'un rien en bas, on réduit légèrement ici */
         @media print {
-            body { 
-                background: none; 
-                padding: 0; 
-                margin: 0;
-            }
-            .page {
-                width: 100%;
-                height: 100%;
-                box-shadow: none;
-            }
+            body { background: none; padding: 0; margin: 0; }
+            .page { width: 100%; height: 100%; box-shadow: none; }
         }
     </style>
 </head>
@@ -234,6 +212,7 @@
                 <ul class="info-list">
                     <li><i class="fas fa-phone-alt"></i> 06.22.36.77.24</li>
                     <li><i class="fas fa-envelope"></i> noemarchal59@gmail.com</li>
+                    <li><i class="fa-brands fa-github"></i> MoUst4ki-tech</li>
                     <li><i class="fas fa-map-marker-alt"></i> Lille, France</li>
                     <li><i class="fas fa-birthday-cake"></i> 13 Mai 2006 (19 ans)</li>
                     <li><i class="fas fa-car"></i> Permis B (Fév. 2024)</li>
@@ -261,6 +240,7 @@
                 <h2><i class="fas fa-language"></i> LANGUES</h2>
                 <ul class="info-list">
                     <li>Anglais Technique (B2)</li>
+                     <li>Immersion Inde (1 mois)</li>
                     <li>Français (Natif)</li>
                 </ul>
             </section>
@@ -302,17 +282,37 @@
                     <div class="item-subtitle">Lycée Privé Ozanam, Lille</div>
                     <div class="item-desc">Systèmes d'Information et Numérique. Délégué de classe.</div>
                 </div>
+            </section>
+<section>
+                <div class="section-title"><span>./</span> PROJETS_TECH</div>
 
                 <div class="timeline-item">
                     <div class="item-header">
-                        <span class="item-title">1ère & 2nde STI2D (Option ESICIT)</span>
-                        <span class="item-date">2022 - 2024</span>
+                        <span class="item-title">My_Top (Unix System)</span>
+                        <span class="item-date">Langage C</span>
                     </div>
-                    <div class="item-subtitle">Lycée Privé Ozanam, Lille</div>
-                    <div class="item-desc">Délégué de classe sur les deux années.</div>
+                    <div class="item-subtitle">Réimplémentation de la commande top</div>
+                    <div class="item-desc">Exploration du dossier <code>/proc</code>, parsing de fichiers systèmes, gestion des signaux et affichage dynamique des processus et de la charge CPU/RAM.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">My_Radar (Algorithmique)</span>
+                        <span class="item-date">C / CSFML</span>
+                    </div>
+                    <div class="item-subtitle">Simulation de trafic aérien & Collisions</div>
+                    <div class="item-desc">Visualisation 2D d'avions et tours de contrôle. Optimisation mathématique pour la détection de collisions (hitbox géométriques).</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <span class="item-title">Administration Système</span>
+                        <span class="item-date">VirtualBox / Linux</span>
+                    </div>
+                    <div class="item-subtitle">Virtualisation & Environnement</div>
+                    <div class="item-desc">Mise en place et configuration de machines virtuelles sous <strong>Fedora</strong> et <strong>Arch Linux</strong> via VirtualBox.</div>
                 </div>
             </section>
-
             <section>
                 <div class="section-title"><span>./</span> EXPERIENCE_PRO</div>
 
@@ -343,31 +343,7 @@
                     <div class="item-desc">Préparation, vente directe et gestion de la caisse.</div>
                 </div>
             </section>
-
-            <section>
-                <div class="section-title"><span>./</span> ENGAGEMENT_SOCIAL</div>
-
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <span class="item-title">Bénévolat & Service</span>
-                        <span class="item-date">2022 - 2023</span>
-                    </div>
-                    <div class="item-subtitle">Pèlerinage à Lourdes (Train Bleu/Vert)</div>
-                    <div class="item-desc">Service auprès des personnes malades et accompagnement humain.</div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <span class="item-title">Stage Associatif</span>
-                        <span class="item-date">Janvier 2023</span>
-                    </div>
-                    <div class="item-subtitle">EHPAD de Bondues</div>
-                    <div class="item-desc">Animation et aide aux résidents. Développement de l'empathie.</div>
-                </div>
-            </section>
-
         </main>
     </div>
-
 </body>
 </html>
