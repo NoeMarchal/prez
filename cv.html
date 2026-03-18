@@ -6,13 +6,13 @@
     <title>CV_Noé_Marchal.pdf</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Consolas:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
+    <style>
         :root {
-            --bg-color: #1e1e1e;
-            --sidebar-color: #252526;
-            --text-color: #d4d4d4;
-            --accent-color: #4a90e2;
-            --border-color: #3e3e42;
+            --bg-color: #ffffff;
+            --sidebar-color: #f8f9fa; /* Gris très clair pour structurer sans vider la cartouche d'encre */
+            --text-color: #333333;
+            --accent-color: #111111; /* Noir / Gris très sombre pour les accents */
+            --border-color: #cccccc;
         }
 
         * {
@@ -25,7 +25,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #555;
+            background-color: #eaeaea; /* Fond de la page web hors CV */
             display: flex;
             justify-content: center;
             padding: 20px;
@@ -37,8 +37,8 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             display: grid;
-            grid-template-columns: 30% 70%; /* Colonne gauche un peu plus large si besoin, sinon 28% 72% */
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            grid-template-columns: 30% 70%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Ombre adoucie pour le mode clair */
             overflow: hidden;
         }
 
@@ -50,7 +50,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 20px; /* Espace équilibré entre les blocs */
+            gap: 20px;
         }
 
         .profile-container {
@@ -69,7 +69,7 @@
 
         .sidebar h2 {
             font-family: 'Consolas', monospace;
-            color: #fff;
+            color: #000000;
             font-size: 1.05em;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 5px;
@@ -82,12 +82,13 @@
         .sidebar h2 i { color: var(--accent-color); font-size: 0.9em; }
 
         .info-list, .skill-list { list-style: none; font-size: 0.9em; }
-        .info-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: #ccc; }
+        .info-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: #444444; }
         .info-list i { color: var(--accent-color); width: 15px; }
 
         .skill-tag {
             display: inline-block;
-            background: #333;
+            background: #ffffff;
+            color: #222222;
             padding: 4px 8px;
             border-radius: 4px;
             margin-bottom: 6px;
@@ -98,27 +99,27 @@
 
         /* --- CONTENU PRINCIPAL (DROITE) --- */
         .main-content {
-            padding: 20px 10px; /* Beaucoup plus d'air sur les côtés et en haut */
+            padding: 20px 10px;
             display: flex;
             flex-direction: column;
         }
 
         .header-name {
-            margin-bottom: 5px; /* Espace sous le nom remis à la normale */
+            margin-bottom: 5px;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 15px;
         }
 
         .header-name h1 {
             font-family: 'Consolas', monospace;
-            color: #fff;
-            font-size: 2.6em; /* Nom plus grand */
+            color: #000000;
+            font-size: 2.6em;
             line-height: 1;
             margin-bottom: 8px;
         }
 
         .header-name .subtitle {
-            color: var(--accent-color);
+            color: #555555;
             font-size: 1.1em;
             font-weight: 600;
             font-family: 'Consolas', monospace;
@@ -128,11 +129,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #fff;
+            color: #000000;
             font-family: 'Consolas', monospace;
             font-size: 1.3em;
-            margin-bottom: 18px; /* Plus d'espace sous les titres */
-            margin-top: 25px;    /* Plus d'espace au dessus des titres */
+            margin-bottom: 18px;
+            margin-top: 25px;
         }
 
         .section-title span { color: var(--accent-color); }
@@ -140,7 +141,7 @@
         .timeline-item {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 18px; /* On ré-écarte les expériences */
+            margin-bottom: 18px;
             border-left: 2px solid var(--border-color);
         }
 
@@ -165,34 +166,34 @@
         }
 
         .item-title {
-            color: #fff;
-            font-weight: 500;
+            color: #000000;
+            font-weight: 600;
             font-size: 0.9em;
         }
 
         .item-date {
             font-family: 'Consolas', monospace;
             font-size: 0.8em;
-            color: var(--accent-color);
-            background: #252526;
+            color: #333333;
+            background: #f0f0f0;
+            border: 1px solid #dddddd;
             padding: 2px 6px;
             border-radius: 4px;
         }
 
         .item-subtitle {
-            color: #aaa;
+            color: #666666;
             font-style: italic;
             font-size: 0.8em;
             margin-bottom: 4px;
         }
 
         .item-desc {
-            font-size: 0.9em;
-            color: #ccc;
-            line-height: 1.45; /* Texte plus aéré pour la lecture */
+            font-size: 0.8em;
+            color: #444444;
+            line-height: 1.45;
         }
 
-        /* Si jamais ça dépasse d'un rien en bas, on réduit légèrement ici */
         @media print {
             body { background: none; padding: 0; margin: 0; }
             .page { width: 100%; height: 100%; box-shadow: none; }
@@ -283,7 +284,8 @@
                     <div class="item-desc">Systèmes d'Information et Numérique. Délégué de classe.</div>
                 </div>
             </section>
-<section>
+            
+            <section>
                 <div class="section-title"><span>./</span> PROJETS_TECH</div>
 
                 <div class="timeline-item">
@@ -313,6 +315,7 @@
                     <div class="item-desc">Mise en place et configuration de machines virtuelles sous <strong>Fedora</strong> et <strong>Arch Linux</strong> via VirtualBox.</div>
                 </div>
             </section>
+            
             <section>
                 <div class="section-title"><span>./</span> EXPERIENCE_PRO</div>
 
